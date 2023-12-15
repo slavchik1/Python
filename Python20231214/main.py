@@ -1,0 +1,1 @@
+print(len(input("Введіть слова.\n").split()))
