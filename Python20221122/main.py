@@ -24,7 +24,7 @@ def songs_list():
 
 
 def remove_song():
-    remove = input("Введіть назву чи виконавця пісню яку ви хоті ли б прибрати.\n")
+    remove = input("Введіть назву чи виконавця пісні яку ви хоті ли б прибрати.\n")
     for i in range(len(songs)):
         if songs[i] == remove or singers[i] == remove:
             songs.pop(i)
@@ -36,8 +36,7 @@ def change_singer():
     change = input("Введіть ім'я пісні у якої ви хоті ли б змінити виконаця.\n")
     for i in range(len(songs)):
         if songs[i] == change:
-            change = input("Виконавець вашої пісні: " + singers[
-                i] + ", введіть виконавця на якого ви хотіли б змінити цього виконавця.\n")
+            change = input("Виконавець вашої пісні: " + singers[i] + ", введіть виконавця на якого ви хотіли б змінити цього виконавця.\n")
             singers[i] = change
 
 
