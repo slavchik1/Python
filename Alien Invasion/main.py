@@ -1,20 +1,29 @@
 import sys
 import pygame
 from settings import Settings
+from ship import Ship
 
 
-def run_game():
-    pygame.init()
-    settings = Settings()
-    screen = pygame.display.set_mode((settings.window_width, settings.window_height))
-    pygame.display.set_caption(settings.window_name)
-    pygame.display.set_icon(pygame.image.load("images/icon.jpeg"))
+class Game:
+    def __int__(self):
+        self.ship = Ship()
 
-run_game()
+    def run_game(self):
+        pygame.init()
+        settings = Settings()
+        pygame.display.set_mode((1200, 800))
+        pygame.display.set_caption(settings.window_name)
+        pygame.display.set_icon(pygame.image.load("images/icon.jpeg"))
+        self.ship.bitme()
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+            pygame.display.flip()
+
+
 
 if __name__ == "__main__":
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
+    game = Game()
+    game.run_game()
