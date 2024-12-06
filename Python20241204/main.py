@@ -5,7 +5,7 @@ class Product:
     count = 0 # Лічильник створених об'єктів
     def __new__(cls, *args, **kwargs):
         cls.count += 1
-        return super().new(cls)
+        return super().__new__(cls)
 
     def __init__(self, name, price, quantity):
          self.name = name
@@ -63,24 +63,24 @@ class Inventory:
 
 def main():
     inventory = Inventory()
-    while True:
-        print("\nОберіть дію:")
-        print("1. Додати товар")
-        print("2. Видалити товар")
-        print("3. Переглянути список товарів")
-        print("4. Вийти")
+    print("\nОберіть дію:")
+    print("1. Додати товар")
+    print("2. Видалити товар")
+    print("3. Переглянути список товарів")
+    print("4. Вийти")
 
-    choice = input("Ваш вибір: ")
-    if choice == '1':
-        inventory.add_product()
-    elif choice == '2':
-        inventory.remove_product()
-    elif choice == '3':
-        inventory.show_inventory()
-    elif choice == '4':
-        print("Роботу завершено.")
-        sys.exit()
-    else:
-        print("Невірний вибір. Спробуйте ще раз.")
+    while True:
+        choice = input("Ваш вибір: ")
+        if choice == '1':
+            inventory.add_product()
+        elif choice == '2':
+            inventory.remove_product()
+        elif choice == '3':
+            inventory.show_inventory()
+        elif choice == '4':
+            print("Роботу завершено.")
+            sys.exit()
+        else:
+            print("Невірний вибір. Спробуйте ще раз.")
 
 main()
