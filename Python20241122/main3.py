@@ -11,6 +11,3 @@ class FileManager:
     def do(self, filename):
         file = open(filename, "w")
         os.write(file, "SHUIDS")
-
-
-
