@@ -1,0 +1,5 @@
+Alex,150
+Olena,95
+Mykhailo,110
+Sofia,80
+Ivan,105
