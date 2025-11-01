@@ -3,9 +3,29 @@ n = int(input())
 A = []
 
 for i in range(n):
-    A.append(map(int, input().split()))
+    A.append(tuple(map(int, input().split())))
 
-for i in range(0, len(A) - 2):
-    dx1 = abs(A[i][0] - A[i + 1][0])
-    dy1 = abs(A[i][1] - A[i + 1][1])
-    
+X = {}
+Y = {}
+
+for p in A:
+    if p[0] not in X:
+        X[p[0]] = 0
+    if p[1] not in Y:
+        Y[p[1]] = 0
+    X[p[0]] += 1
+    Y[p[1]] += 1
+
+# print(X)
+# print(Y)
+
+ans = 0
+
+for i in X:
+    if X[i] >= 3:
+        ans += X[i] - 2
+for i in Y:
+    if Y[i] >= 3:
+        ans += Y[i] - 2
+
+print(ans)
